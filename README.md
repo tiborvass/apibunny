@@ -1,3 +1,5 @@
+This is a quick hack in Go trying to explore the maze at http://apibunny.com.
+
 # Running
 
 ## With Docker
