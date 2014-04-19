@@ -138,7 +138,7 @@ func VisitAll(url string) {
 
 	for name, docs := range node.Documents {
 		for _, doc := range docs {
-			fmt.Printf("	\"%s\" [label=\"Id: http://apibunny.com/%s/%s\n%s\"];\n", doc.Id, name, doc.Id, concat(doc.Attributes))
+			fmt.Printf("	\"%s\" [label=\"Id: http://apibunny.com/%s/%s\\n%s\"];\n", doc.Id, name, doc.Id, concat(doc.Attributes))
 			seen.Visit(doc.Id)
 			if x, ok := doc.Attributes["exit_link"]; ok {
 				exitLink = x.(string)
@@ -167,7 +167,7 @@ func VisitAll(url string) {
 func concat(m map[string]interface{}) string {
 	var s string
 	for k, v := range m {
-		s = fmt.Sprintf("%s%s: %v\n", s, k, v)
+		s = fmt.Sprintf("%s%s: %v\\n", s, k, v)
 	}
 	return s
 }
